@@ -11,7 +11,7 @@ export class HeroesComponent implements OnInit {
     id: 1,
     name: 'Windstorm',
     age: 20
-  };
+  };  
   constructor() { }
 
   ngOnInit() {
