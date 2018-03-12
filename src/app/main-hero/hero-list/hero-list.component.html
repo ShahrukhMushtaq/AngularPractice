@@ -1,0 +1,18 @@
+<h2 class="text-center text-info">Registered Heroes</h2>
+<table class="table table-sm table-hover">
+  <tr *ngIf="heroList.length==0">
+    <td class="text-center" colspan="3">Nothing to show</td>
+  </tr>
+  <tr *ngFor="let hero of heroList">
+    <td>{{hero.name}}</td>
+    <td>{{hero.salary}}</td>
+    <td>
+      <a class="btn" (click)="onUpdate(hero)">
+        <i class="fa fa-pencil-square-o"></i>
+      </a>
+      <a class="btn" (click)="onDelete(hero.$key)">
+          <i class="fa fa-trash-o"></i>
+      </a>
+    </td>
+  </tr>
+</table>
