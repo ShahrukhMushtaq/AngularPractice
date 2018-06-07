@@ -9,19 +9,35 @@ import { environment } from "../environments/environment";
 import { MainHeroComponent } from './main-hero/main-hero.component';
 import { HeroComponent } from './main-hero/hero/hero.component';
 import { HeroListComponent } from './main-hero/hero-list/hero-list.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
+//import { AppRoutingModule } from './/app-routing.module';
+
+import { RouterModule, Routes } from "@angular/router";
+const routes: Routes = [
+  { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
+  { path:'home', component: HomeComponent},
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent }
+];
 
 @NgModule({
   declarations: [
     AppComponent,
     MainHeroComponent,
     HeroComponent,
-    HeroListComponent
+    HeroListComponent,
+    HomeComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AngularFireDatabaseModule,
+    RouterModule.forRoot(routes)
   ],
   providers: [],
   bootstrap: [AppComponent]
